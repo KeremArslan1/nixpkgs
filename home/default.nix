@@ -17,15 +17,6 @@
   programs.bat.config = {
     theme = "Dracula";
   };
-  # See `./shells.nix` for more on how this is used.
-  programs.fish.functions.set-bat-colors = {
-    body = ''set -xg BAT_THEME ansi-"$term_background"'';
-    onVariable = "term_background";
-  };
-  programs.fish.interactiveShellInit = ''
-    # Set `bat` colors based on value of `$term_backdround` when shell starts up.
-    set-bat-colors
-  '';
 
   # Direnv, load and unload environment variables depending on the current directory.
   # https://direnv.net
@@ -54,15 +45,12 @@
   # Other packages ----------------------------------------------------------------------------- {{{
 
   home.packages = with pkgs; [
-   go
-    minikube
+    go
     kotlin
-    coursier
     colorls
-    pstree
     bash # /bin/bash
-    cachix # Nix build cache
     curl # An old classic
+    wget
     direnv # Per-directory environment variables
     fzf # Fuzzy finder
     fd
@@ -72,25 +60,26 @@
     pinentry_mac # Necessary for GPG
     gradle
     htop # Resource monitoring
+    gotop # A terminal based graphical activity monitor inspired by gtop and vtop
     httpie # Like curl but more user friendly
     jq # JSON parsing for the CLI
     jsonnet # Easy config language
 
-    ngrok # Expose local HTTP stuff publicly
-
-    pre-commit # Pre-commit CI hook tool
     # python3 # Have you upgraded yet???
     ripgrep # grep replacement written in Rust
     tokei # Handy tool to see lines of code by language
     tree # Should be included in macOS but it's not
     vagrant # Virtualization made easy
-    wget
+    urlview # required for tmux-urlview
+
     yarn # Node.js package manager
     tldr
     ncdu
     exa
     ffmpeg
     rename
+
+    tmux
 
     # zathura # A highly customizable and functional PDF viewer
     # mupdf # Lightweight PDF, XPS, and E-book viewer and toolkit written in portable C
@@ -103,16 +92,12 @@
     shellcheck
     neofetch # A fast, highly customizable system info script
     dive # A tool for exploring each layer in a docker image
-    gotop # A terminal based graphical activity monitor inspired by gtop and vtop
-
+    
     cacert
     comma # run software from without installing it
     redis
 
-    # gitAndTools.git
-    gitAndTools.delta
     gitAndTools.gh
-
   ];
   # }}}
 

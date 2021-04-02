@@ -21,7 +21,7 @@
   hmu = "nix-channel --update && hms";
   drb = "nix build ~/.config/nixpkgs/#darwinConfigurations.bootstrap.system";
   drs = "darwin-rebuild switch --flake ~/.config/nixpkgs/#MacBookPro";
-  flakeup = "nix flake update --recreate-lock-file ~/.config/nixpkgs/";
+  flakeup = "nix flake update ~/.config/nixpkgs/";
 
   # See which Nix packages are installed
   installed = "nix-env --query --installed";

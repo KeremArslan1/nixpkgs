@@ -21,17 +21,11 @@
     "coursier"
     "luajit" # brew install --HEAD luajit
     "neovim" # brew install --HEAD neovim
-    "efm-langserver"
     "ninja"
     "node"
     "sbt"
     "skhd"  
     "yabai"
-
-    # Kubernetes
-    "kubernetes-cli" # Already comes with docker
-    "helm"
-    "kubectx"
   ];
 
   homebrew.casks = [
@@ -46,7 +40,6 @@
     "font-hack-nerd-font"
     "font-jetbrains-mono"
     "fork"
-    "google-chat"
     "google-chrome"
     "google-drive-file-stream"
     "gpg-suite"

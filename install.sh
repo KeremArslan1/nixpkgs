@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-nix flake update --recreate-lock-file
+nix flake update 
 
 nix build .#darwinConfigurations.bootstrap.system
 
