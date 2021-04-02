@@ -2,6 +2,10 @@
 let inherit (lib) mkDefault; in
 {
   programs.starship.settings = {
+    character = {
+      success_symbol = "[](bold green)";
+      error_symbol = "[](bold red)";
+    };
     aws.symbol = mkDefault " ";
     battery.full_symbol = mkDefault "";
     battery.charging_symbol = mkDefault "";
@@ -36,6 +40,7 @@ let inherit (lib) mkDefault; in
     helm.symbol = mkDefault "⎈ ";
     hg_branch.symbol = mkDefault " ";
     java.symbol = mkDefault " ";
+    scala.symbol = mkDefault " ";
     julia.symbol = mkDefault " ";
     kotlin.symbol = mkDefault " ";
     kubernetes.symbol = mkDefault "☸ ";

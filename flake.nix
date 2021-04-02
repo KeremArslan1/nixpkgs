@@ -1,5 +1,5 @@
 {
-  description = "Malo’s Nix system configs, and some other useful stuff.";
+  description = "Pritam's Nix System Configs";
 
   inputs = {
     # Package sets
@@ -9,30 +9,16 @@
     nixos-stable.url = "github:nixos/nixpkgs/nixos-20.09";
 
     # Environment/system management
-    darwin.url = "github:hardselius/nix-darwin";
+    darwin.url = "github:kpritam/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Neovim plugins
-    galaxyline-nvim = { url = "github:glepnir/galaxyline.nvim"; flake = false; };
-    lush-nvim = { url = "github:rktjmp/lush.nvim"; flake = false; };
-    moses-lua = { url = "github:Yonaba/Moses"; flake = false; };
-    nvim-bufferline-lua = { url = "github:akinsho/nvim-bufferline.lua"; flake = false; };
-    telescope-nvim = { url = "github:nvim-telescope/telescope.nvim"; flake = false; };
-    telescope-symbols-nvim = { url = "github:nvim-telescope/telescope-symbols.nvim"; flake = false; };
-    telescope-z-nvim = { url = "github:nvim-telescope/telescope-z.nvim"; flake = false; };
-    vim-haskell-module-name = { url = "github:chkno/vim-haskell-module-name"; flake = false; };
 
     # Other sources
     comma = { url = "github:Shopify/comma"; flake = false; };
     fish-done = { url = "github:franciscolourenco/done"; flake = false; };
     flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
     flake-utils.url = "github:numtide/flake-utils";
-    neovim.url = "github:neovim/neovim?dir=contrib";
-    neovim.inputs.nixpkgs.follows = "nixpkgs";
-    prefmanager.url = "github:malob/prefmanager";
-    prefmanager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
 
@@ -61,10 +47,7 @@
     homeManagerCommonConfig = with self.homeManagerModules; {
       imports = [
         ./home
-        configs.git.aliases
-        configs.gh.aliases
         configs.starship.symbols
-        programs.neovim.extras
         programs.kitty.extras
       ];
     };
@@ -101,11 +84,11 @@
       };
 
       # My macOS main laptop config
-      MaloBookPro = darwin.lib.darwinSystem {
-        modules = nixDarwinCommonModules { user = "malo"; } ++ [
+      MacBookPro = darwin.lib.darwinSystem {
+        modules = nixDarwinCommonModules { user = "pritamkadam"; } ++ [
           {
-            networking.computerName = "Malo’s 💻";
-            networking.hostName = "MaloBookPro";
+            networking.computerName = "pritamkadam";
+            networking.hostName = "MacBook-Pro";
             networking.knownNetworkServices = [
               "Wi-Fi"
               "USB 10/100/1000 LAN"
@@ -114,25 +97,8 @@
         ];
       };
 
-      # Config with small modifications needed/desired for CI with GitHub workflow
-      githubCI = darwin.lib.darwinSystem {
-        modules = nixDarwinCommonModules { user = "runner"; } ++ [
-          ({ lib, ... }: { homebrew.enable = lib.mkForce false; })
-        ];
-      };
     };
 
-    # Config I use with Linux cloud VMs
-    # Build and activate with `nix build .#cloudVM.activationPackage; ./result/activate`
-    cloudVM = home-manager.lib.homeManagerConfiguration {
-      system = "x86_64-linux";
-      homeDirectory = "/home/malo";
-      username = "malo";
-      configuration = {
-        imports = [ homeManagerCommonConfig ];
-        nixpkgs = nixpkgsConfig;
-      };
-    };
     # }}}
 
     # Outputs useful to others ----------------------------------------------------------------- {{{
@@ -142,21 +108,6 @@
         final: prev: {
           # Some packages
           comma = import comma { inherit (prev) pkgs; };
-          neovim-nightly = neovim.packages.${prev.stdenv.system}.neovim;
-          prefmanager = prefmanager.defaultPackage.${prev.stdenv.system};
-
-          # Vim plugins
-          vimPlugins = prev.vimPlugins // prev.lib.genAttrs [
-            "galaxyline-nvim"
-            "lush-nvim"
-            "nvim-bufferline-lua"
-            "telescope-nvim"
-            "telescope-symbols-nvim"
-            "telescope-z-nvim"
-            "vim-haskell-module-name"
-          ] (final.lib.buildVimPluginFromFlakeInput inputs) // {
-            moses-nvim = final.lib.buildNeovimLuaPackagePluginFromFlakeInput inputs "moses-lua";
-          };
 
           # Fish shell plugins
           fishPlugins = prev.fishPlugins // {
@@ -179,10 +130,7 @@
     };
 
     homeManagerModules = {
-      configs.git.aliases = import ./home/configs/git-aliases.nix;
-      configs.gh.aliases = import ./home/configs/gh-aliases.nix;
       configs.starship.symbols = import ./home/configs/starship-symbols.nix;
-      programs.neovim.extras = import ./home/modules/programs/neovim/extras.nix;
       programs.kitty.extras = import ./home/modules/programs/kitty/extras.nix;
     };
     # }}}

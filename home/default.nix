@@ -5,8 +5,7 @@
   imports = [
     ./git.nix
     ./kitty.nix
-    ./neovim.nix
-    ./shells.nix
+    ./fish
   ];
 
   # Packages with configuration --------------------------------------------------------------- {{{
@@ -45,60 +44,75 @@
   programs.zoxide.enable = true;
   # }}}
 
+  home.sessionVariables = {
+    PGDATA = "/usr/local/var/postgres";
+    JAVA_HOME = "$(/usr/libexec/java_home -v 11)";
+    EDITOR = "nvim";
+  };
+
+
   # Other packages ----------------------------------------------------------------------------- {{{
 
   home.packages = with pkgs; [
-    # Some basics
-    abduco # lightweight session management
-    bandwhich # display current network utilization by process
-    bottom # fancy version of `top` with ASCII graphs
-    browsh # in terminal browser
-    coreutils
-    curl
-    du-dust # fancy version of `du`
-    exa # fancy version of `ls`
-    fd # fancy version of `find`
-    htop # fancy version of `top`
-    hyperfine # benchmarking tool
-    mosh # wrapper for `ssh` that better and not dropping connections
-    nodePackages.speed-test # nice speed-test tool
-    parallel # runs commands in parallel
-    stable.procs # fancy version of `ps`
-    ripgrep # better version of `grep`
-    tealdeer # rust implementation of `tldr`
-    stable.thefuck
-    unrar # extract RAR archives
+   go
+    minikube
+    kotlin
+    coursier
+    colorls
+    pstree
+    bash # /bin/bash
+    cachix # Nix build cache
+    curl # An old classic
+    direnv # Per-directory environment variables
+    fzf # Fuzzy finder
+    fd
+    ranger
+    highlight
+    gnupg # gpg
+    pinentry_mac # Necessary for GPG
+    gradle
+    htop # Resource monitoring
+    httpie # Like curl but more user friendly
+    jq # JSON parsing for the CLI
+    jsonnet # Easy config language
+
+    ngrok # Expose local HTTP stuff publicly
+
+    pre-commit # Pre-commit CI hook tool
+    # python3 # Have you upgraded yet???
+    ripgrep # grep replacement written in Rust
+    tokei # Handy tool to see lines of code by language
+    tree # Should be included in macOS but it's not
+    vagrant # Virtualization made easy
     wget
-    xz # extract XZ archives
+    yarn # Node.js package manager
+    tldr
+    ncdu
+    exa
+    ffmpeg
+    rename
 
-    # Dev stuff
-    (agda.withPackages (p: [ p.standard-library ]))
-    cloc # source code line counter
-    google-cloud-sdk
-    haskell-language-server
-    haskellPackages.cabal-install
-    haskellPackages.hoogle
-    haskellPackages.hpack
-    haskellPackages.implicit-hie
-    haskellPackages.stack
-    idris2
-    jq
-    nodePackages.typescript
-    nodejs
-    (python3.withPackages (p: with p; [ mypy pylint yapf ]))
-    s3cmd
-    tickgit
+    # zathura # A highly customizable and functional PDF viewer
+    # mupdf # Lightweight PDF, XPS, and E-book viewer and toolkit written in portable C
+    ueberzug
+    silver-searcher
+    # universal-ctags
+    lazygit
+    lazydocker
 
-    # Useful nix related tools
-    cachix # adding/managing alternative binary caches hosted by Cachix
+    shellcheck
+    neofetch # A fast, highly customizable system info script
+    dive # A tool for exploring each layer in a docker image
+    gotop # A terminal based graphical activity monitor inspired by gtop and vtop
+
+    cacert
     comma # run software from without installing it
-    lorri # improve `nix-shell` experience in combination with `direnv`
-    niv # easy dependency management for nix projects
-    nodePackages.node2nix
+    redis
 
-  ] ++ lib.optionals stdenv.isDarwin [
-    m-cli # useful macOS CLI commands
-    prefmanager # tool for working with macOS defaults
+    # gitAndTools.git
+    gitAndTools.delta
+    gitAndTools.gh
+
   ];
   # }}}
 

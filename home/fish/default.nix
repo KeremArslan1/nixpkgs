@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
+let
 
-{
+  # Set all shell aliases programatically
+  shellAliases = import ./aliases.nix { inherit pkgs; };
+
+in {
   # Fish Shell
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.fish.enable
   programs.fish.enable = true;
@@ -78,28 +82,50 @@
   # Fish configuration ------------------------------------------------------------------------- {{{
 
   # Aliases
-  programs.fish.shellAliases = with pkgs; {
-    # Nix related
-    drb = "darwin-rebuild build --flake ~/.config/nixpkgs/";
-    drs = "darwin-rebuild switch --flake ~/.config/nixpkgs/";
-    flakeup = "nix flake update --recreate-lock-file ~/.config/nixpkgs/";
-    nb = "nix build";
-    nd = "nix develop";
-    nf = "nix flake";
-    nr = "nix run";
-    ns = "nix search";
+  programs.fish = { 
+    inherit shellAliases; 
+  
+    plugins = [
+      {
+        name = "colored-man";
+        src = pkgs.fetchFromGitHub {
+          owner = "decors";
+          repo = "fish-colored-man";
+          rev = "c1e9db7765c932587b795d6c8965e9cff2fd849a";
+          sha256 = "16ar220pz8lmv58c8fj81mi7slk0qb20dh5zdwcyyw12dgzahsvr";
+        };
+      }
+      {
+        name = "z";
+        src = pkgs.fetchFromGitHub {
+          owner = "jethrokuan";
+          repo = "z";
+          rev = "13a320bee8b815704772d94f5994745b11cd1e03";
+          sha256 = "0z7l7fgd9khcq1fi9ymjjrxj58pw5xdzg8k6mxqmqw1345hkpr4f";
+        };
+      }
 
-    # Other
-    ".." = "cd ..";
-    ":q" = "exit";
-    cat = "${bat}/bin/bat";
-    du = "${du-dust}/bin/dust";
-    g = "${gitAndTools.git}/bin/git";
-    la = "ll -a";
-    ll = "ls -l --time-style long-iso --icons";
-    ls = "${exa}/bin/exa";
-    ps = "${stable.procs}/bin/procs";
-    tb = "toggle-background";
+      {
+        name = "bass";
+        src = pkgs.fetchFromGitHub {
+          owner = "edc";
+          repo = "bass";
+          rev = "df4a1ebf8c0536e4bd7b7828a4c0dcb2b7b5d22b";
+          sha256 = "1dgydrza6lvx3dl9spkla1g728x5rr76mqrwk2afrl732439y6jl";
+        };
+      }
+
+      {
+        name = "foreign-env";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-foreign-env";
+          rev = "dddd9213272a0ab848d474d0cbde12ad034e65bc";
+          sha256 = "00xqlyl3lffc5l0viin1nyp819wf81fncqyz87jx8ljjdhilmgbs";
+        };
+      }
+
+    ];
   };
 
   # Configuration that should be above `loginShellInit` and `interactiveShellInit`.

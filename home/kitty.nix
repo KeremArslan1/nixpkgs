@@ -30,9 +30,9 @@ in
 
   programs.kitty.settings = {
     # https://fsd.it/shop/fonts/pragmatapro/
-    font_family = "PragmataPro Mono Liga";
-    font_size = "14.0";
-    adjust_line_height = "140%";
+    font_family = "FiraCode Nerd Font Mono";
+    font_size = "16.0";
+    adjust_line_height = "130%";
     disable_ligatures = "cursor"; # disable ligatures when cursor is on them
 
     # Window layout
@@ -49,11 +49,11 @@ in
   };
 
   # Change the style of italic font variants
-  programs.kitty.extraConfig = ''
-    font_features PragmataProMonoLiga-Italic +ss06
-    font_features PragmataProMonoLiga-BoldItalic +ss07
-  '';
-  # }}}
+  # programs.kitty.extraConfig = ''
+  #   font_features PragmataProMonoLiga-Italic +ss06
+  #   font_features PragmataProMonoLiga-BoldItalic +ss07
+  # '';
+  # # }}}
 
   # Colors config ------------------------------------------------------------------------------ {{{
   programs.kitty.extras.colors = with pkgs.lib.colors; {

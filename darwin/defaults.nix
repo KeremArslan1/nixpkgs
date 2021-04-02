@@ -15,19 +15,19 @@
   };
 
   # Firewall
-  system.defaults.alf = {
-    globalstate = 1;
-    allowsignedenabled = 1;
-    allowdownloadsignedenabled = 1;
-    stealthenabled = 1;
-  };
+  # system.defaults.alf = {
+  #   globalstate = 1;
+  #   allowsignedenabled = 1;
+  #   allowdownloadsignedenabled = 1;
+  #   stealthenabled = 1;
+  # };
 
   # Dock and Mission Control
   system.defaults.dock = {
     autohide = true;
     expose-group-by-app = false;
     mru-spaces = false;
-    tilesize = 128;
+    tilesize = 40;
   };
 
   # Login and lock screen
@@ -41,7 +41,7 @@
 
   # Trackpad
   system.defaults.trackpad = {
-    Clicking = false;
+    Clicking = true;
     TrackpadRightClick = true;
   };
 
