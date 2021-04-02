@@ -32,20 +32,18 @@ in
     # https://fsd.it/shop/fonts/pragmatapro/
     font_family = "FiraCode Nerd Font Mono";
     font_size = "16.0";
-    adjust_line_height = "130%";
+    adjust_line_height = "120%";
     disable_ligatures = "cursor"; # disable ligatures when cursor is on them
-
     # Window layout
     hide_window_decorations = "titlebar-only";
-    window_padding_width = "10";
 
+    scrollback_lines = "10000";
     # Tab bar
-    tab_bar_edge = "top";
-    tab_bar_style = "powerline";
-    tab_title_template = "Tab {index}: {title}";
-    active_tab_font_style = "bold";
-    inactive_tab_font_style = "normal";
-    tab_activity_symbol = "";
+    # tab_bar_style = "powerline";
+    # tab_title_template = "{index}: {title}";
+    # active_tab_font_style = "bold";
+    # inactive_tab_font_style = "normal";
+    # tab_activity_symbol = "";
   };
 
   # Change the style of italic font variants

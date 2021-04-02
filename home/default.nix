@@ -15,7 +15,7 @@
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.bat.enable
   programs.bat.enable = true;
   programs.bat.config = {
-    style = "plain";
+    theme = "Dracula";
   };
   # See `./shells.nix` for more on how this is used.
   programs.fish.functions.set-bat-colors = {
