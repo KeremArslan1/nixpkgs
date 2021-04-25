@@ -15,7 +15,12 @@
     "AdoptOpenJDK/openjdk"
     "koekeishiya/formulae"
     "coursier/formulas"
+	"railwaycat/emacsmacport"  
   ];
+
+  homebrew.extraConfig = ''
+ 	brew "emacs-mac", args:["with-starter", "with-imagemagick", "with-rsvg", "with-no-title-bars", "with-emacs-big-sur-icon", "with-mac-metal"]
+  '';
 
   homebrew.brews = [
     "coursier"

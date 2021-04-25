@@ -45,7 +45,6 @@
   # Other packages ----------------------------------------------------------------------------- {{{
 
   home.packages = with pkgs; [
-  	emacs
     go
     kotlin
     colorls
