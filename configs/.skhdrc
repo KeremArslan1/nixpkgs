@@ -42,10 +42,10 @@ hyper - m  : yabai -m display --focus 2
 
 # "Swaps" with another Window, obtaining its size and position
 # Swap: Ctrl + Alt + [DIR]
-hyper - i : yabai -m window --swap north
-hyper - k : yabai -m window --swap south
-hyper - l : yabai -m window --swap east
-hyper - j : yabai -m window --swap west
+hyper - k : yabai -m window --swap north
+hyper - l : yabai -m window --swap south
+hyper - j : yabai -m window --swap east
+hyper - h : yabai -m window --swap west
 
 # Sends Window to Space and shifts focus
 # Send: Shift + Cmd + [NUM]
@@ -64,10 +64,10 @@ hyper - 1 : yabai -m window --display 1; yabai -m display --focus 1
 hyper - 2 : yabai -m window --display 2; yabai -m display --focus 2
 
 # Floating Move
-shift + alt - j : yabai -m window --move rel:-20:0
-shift + alt - k : yabai -m window --move rel:0:20
-shift + alt - i : yabai -m window --move rel:0:-20
-shift + alt - l : yabai -m window --move rel:20:0
+shift + alt - h : yabai -m window --move rel:-20:0
+shift + alt - l : yabai -m window --move rel:0:20
+shift + alt - k : yabai -m window --move rel:0:-20
+shift + alt - j : yabai -m window --move rel:20:0
 
 # Rotate
 hyper - r : yabai -m space --rotate 90
