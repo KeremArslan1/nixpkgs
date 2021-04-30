@@ -16,7 +16,6 @@
 
     # Other sources
     comma = { url = "github:Shopify/comma"; flake = false; };
-    fish-done = { url = "github:franciscolourenco/done"; flake = false; };
     flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -108,15 +107,6 @@
         final: prev: {
           # Some packages
           comma = import comma { inherit (prev) pkgs; };
-
-          # Fish shell plugins
-          fishPlugins = prev.fishPlugins // {
-            done = prev.fishPlugins.buildFishPlugin {
-              pname = "done";
-              version = "HEAD";
-              src = inputs.fish-done;
-            };
-          };
         }
       )
       # Other overlays that don't depend on flake inputs.

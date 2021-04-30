@@ -13,13 +13,14 @@
       ".DS_Store"
       ".idea/"
       ".metals"
-      "metals.sbt"
+      "*/**/metals.sbt"
       ".bloop"
       "*.swp"
       "dumb.rdb"
       ".vscode/"
       "npm-debug.log"
       "shell.nix"
+	  ".log"
     ];
 
     # Replaces aliases in ~/.gitconfig

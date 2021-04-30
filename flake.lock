@@ -36,22 +36,6 @@
         "type": "github"
       }
     },
-    "fish-done": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1618251766,
-        "narHash": "sha256-NFysKzRZgDXXZW/sUlZNu7ZpMCKwbjAhIfspSK3UqCY=",
-        "owner": "franciscolourenco",
-        "repo": "done",
-        "rev": "8fd2bc5c95a93b65452281459a167f1bbfb58990",
-        "type": "github"
-      },
-      "original": {
-        "owner": "franciscolourenco",
-        "repo": "done",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -171,7 +155,6 @@
       "inputs": {
         "comma": "comma",
         "darwin": "darwin",
-        "fish-done": "fish-done",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
