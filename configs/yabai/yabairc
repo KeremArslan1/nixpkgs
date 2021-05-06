@@ -1,3 +1,4 @@
+
 #!/usr/bin/env sh
 
 # the scripting-addition must be loaded manually if
@@ -25,7 +26,7 @@ yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.90
 
-yabai -m config window_border                on
+yabai -m config window_border                off 
 yabai -m config window_border_width          3
 yabai -m config active_window_border_color   0xFF5998FF
 yabai -m config normal_window_border_color   0xFFC6D8F5
@@ -40,13 +41,13 @@ yabai -m config mouse_drop_action            stack
 
 # general space settings
 yabai -m config layout                       bsp
-# yabai -m config top_padding                  0
-# yabai -m config bottom_padding               0
-# yabai -m config left_padding                 7
-# yabai -m config right_padding                0
-# yabai -m config window_gap                   0
-yabai -m signal --add event=window_created action="~/.config/yabai/refresh.sh"
-yabai -m signal --add event=window_destroyed action="~/.config/yabai/refresh.sh"
+yabai -m config top_padding                  20
+yabai -m config bottom_padding               20
+yabai -m config left_padding                 20
+yabai -m config right_padding                20
+yabai -m config window_gap                   20
+# yabai -m signal --add event=window_created action="~/.config/yabai/refresh.sh"
+# yabai -m signal --add event=window_destroyed action="~/.config/yabai/refresh.sh"
 
 # Space labels
 yabai -m space 1 --label 1
@@ -167,8 +168,4 @@ yabai -m signal --add event=window_title_changed action="osascript -e 'tell appl
 #
 # for this to work you must configure sudo such that
 # it will be able to run the command without password
-
-sudo yabai --load-sa
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-
 echo "yabai configuration loaded.."

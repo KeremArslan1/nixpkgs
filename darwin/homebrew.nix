@@ -24,13 +24,13 @@
 
   homebrew.brews = [
     "coursier"
+    "editorconfig"
     "luajit" # brew install --HEAD luajit
     "neovim" # brew install --HEAD neovim
     "ninja"
     "node"
     "sbt"
-    "skhd"  
-    "yabai"
+    "svn"
   ];
 
   homebrew.casks = [
@@ -42,8 +42,17 @@
     "evernote"
     "firefox"
     "flycut"
-    "font-hack-nerd-font"
+    # Fonts
+    "font-fantasque-sans-mono"
+    "font-iosevka-nerd-font"
+    "font-juliamono"
+    "font-liberation-nerd-font"
+    "font-jetbrains-mono-nerd-font"
     "font-jetbrains-mono"
+    "ubuntu"
+    "font-ubuntu-mono-nerd-font"
+    "font-hack-nerd-font"
+    
     "fork"
     "google-chrome"
     "google-drive-file-stream"
@@ -52,7 +61,6 @@
     "iterm2"
     "jetbrains-toolbox"
     "karabiner-elements"
-    "kitty"
     "notion"
     "slack"
     "signal"

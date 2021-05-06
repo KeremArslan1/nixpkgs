@@ -63,7 +63,6 @@
     gotop # A terminal based graphical activity monitor inspired by gtop and vtop
     httpie # Like curl but more user friendly
     jq # JSON parsing for the CLI
-    jsonnet # Easy config language
 
     # python3 # Have you upgraded yet???
     ripgrep # grep replacement written in Rust
@@ -81,6 +80,12 @@
 
     tmux
 
+    # Doom Emacs Prereq
+    coreutils
+    gawk
+    aspell
+    nixfmt
+    
     # zathura # A highly customizable and functional PDF viewer
     # mupdf # Lightweight PDF, XPS, and E-book viewer and toolkit written in portable C
     ueberzug

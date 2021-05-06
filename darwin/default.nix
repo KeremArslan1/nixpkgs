@@ -27,6 +27,11 @@
   environment.variables = {
     TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
   };
+
+  services.yabai.enable = true;
+  services.yabai.package = pkgs.yabai;
+  services.skhd.enable = true;
+  
   programs.nix-index.enable = true;
 
   # Fonts
@@ -35,7 +40,7 @@
 
   # Keyboard
   system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToEscape = true;
+  # system.keyboard.remapCapsLockToEscape = true;
 
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
