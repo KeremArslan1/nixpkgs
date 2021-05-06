@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "comma": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1588170489,
-        "narHash": "sha256-IT7zlcM1Oh4sWeCJ1m4NkteuajPxTnNo1tbitG0eqlg=",
-        "owner": "Shopify",
-        "repo": "comma",
-        "rev": "4a62ec17e20ce0e738a8e5126b4298a73903b468",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Shopify",
-        "repo": "comma",
-        "type": "github"
-      }
-    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -121,11 +105,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1620313747,
-        "narHash": "sha256-DU0OCVxtW/hpEyCv913cKwM4rzu3Gqc+06YFFiPqwKI=",
+        "lastModified": 1620315489,
+        "narHash": "sha256-mKEcXdAa12oVnrQ5rzzB214w9NzTY4iDYQh+pPX2ars=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0fbace6296c3888e2be33411c25c3ad2ab196bc9",
+        "rev": "8e84cafcd9350ce11e3f630003b859d4c70a483a",
         "type": "github"
       },
       "original": {
@@ -153,7 +137,6 @@
     },
     "root": {
       "inputs": {
-        "comma": "comma",
         "darwin": "darwin",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",

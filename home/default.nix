@@ -99,7 +99,7 @@
     dive # A tool for exploring each layer in a docker image
     
     cacert
-    comma # run software from without installing it
+    # comma # run software from without installing it
     redis
 
     gitAndTools.gh

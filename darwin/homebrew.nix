@@ -15,11 +15,11 @@
     "AdoptOpenJDK/openjdk"
     "koekeishiya/formulae"
     "coursier/formulas"
-	"railwaycat/emacsmacport"  
+    "railwaycat/emacsmacport"
   ];
 
   homebrew.extraConfig = ''
- 	brew "emacs-mac", args:["with-starter", "with-imagemagick", "with-rsvg", "with-no-title-bars", "with-emacs-big-sur-icon", "with-mac-metal"]
+    brew "emacs-mac", args:["with-starter", "with-imagemagick", "with-rsvg", "with-no-title-bars", "with-emacs-big-sur-icon", "with-mac-metal"]
   '';
 
   homebrew.brews = [
@@ -31,6 +31,8 @@
     "node"
     "sbt"
     "svn"
+    "ktlint"
+    "coreutils"
   ];
 
   homebrew.casks = [
@@ -49,10 +51,8 @@
     "font-liberation-nerd-font"
     "font-jetbrains-mono-nerd-font"
     "font-jetbrains-mono"
-    "ubuntu"
-    "font-ubuntu-mono-nerd-font"
     "font-hack-nerd-font"
-    
+
     "fork"
     "google-chrome"
     "google-drive-file-stream"
@@ -73,7 +73,7 @@
     "zoom"
   ];
 
-    homebrew.masApps = {
+  homebrew.masApps = {
     # "1Blocker" = 1107421413;
     # "1Password" = 1333542190;
     # DaisyDisk = 411643860;

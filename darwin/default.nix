@@ -32,7 +32,7 @@
   services.yabai.package = pkgs.yabai;
   services.skhd.enable = true;
   
-  programs.nix-index.enable = true;
+  # programs.nix-index.enable = true;
 
   # Fonts
   fonts.enableFontDir = true;

@@ -15,7 +15,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Other sources
-    comma = { url = "github:Shopify/comma"; flake = false; };
+    # comma = { url = "github:Shopify/comma"; flake = false; };
     flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -106,7 +106,7 @@
       (
         final: prev: {
           # Some packages
-          comma = import comma { inherit (prev) pkgs; };
+          # comma = import comma { inherit (prev) pkgs; };
         }
       )
       # Other overlays that don't depend on flake inputs.
