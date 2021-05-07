@@ -24,7 +24,6 @@
 
   homebrew.brews = [
     "coursier"
-    "editorconfig"
     "luajit" # brew install --HEAD luajit
     "neovim" # brew install --HEAD neovim
     "ninja"

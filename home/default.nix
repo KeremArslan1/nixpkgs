@@ -2,11 +2,7 @@
 
 {
   # Import config broken out into files
-  imports = [
-    ./git.nix
-    ./kitty.nix
-    ./fish
-  ];
+  imports = [ ./git.nix ./kitty.nix ./fish ];
 
   # Packages with configuration --------------------------------------------------------------- {{{
 
@@ -14,9 +10,7 @@
   # https://github.com/sharkdp/bat
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.bat.enable
   programs.bat.enable = true;
-  programs.bat.config = {
-    theme = "Dracula";
-  };
+  programs.bat.config = { theme = "Dracula"; };
 
   # Direnv, load and unload environment variables depending on the current directory.
   # https://direnv.net
@@ -40,7 +34,6 @@
     JAVA_HOME = "$(/usr/libexec/java_home -v 11)";
     EDITOR = "nvim";
   };
-
 
   # Other packages ----------------------------------------------------------------------------- {{{
 
@@ -83,9 +76,15 @@
     # Doom Emacs Prereq
     coreutils
     gawk
-    aspell
+    # :checkers grammar
+    languagetool
+    imagemagick # for image-dired
+    # :tools editorconfig
+    editorconfig-core-c # per-project style config
+    # :checkers spell
+    (aspellWithDicts (ds: with ds; [ en en-computers en-science ]))
     nixfmt
-    
+
     # zathura # A highly customizable and functional PDF viewer
     # mupdf # Lightweight PDF, XPS, and E-book viewer and toolkit written in portable C
     ueberzug
@@ -97,7 +96,7 @@
     shellcheck
     neofetch # A fast, highly customizable system info script
     dive # A tool for exploring each layer in a docker image
-    
+
     cacert
     # comma # run software from without installing it
     redis
