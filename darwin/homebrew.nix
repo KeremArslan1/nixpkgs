@@ -30,6 +30,8 @@
     "node"
     "sbt"
     "svn"
+    "skhd"
+    "yabai"
     "ktlint"
     "coreutils"
   ];

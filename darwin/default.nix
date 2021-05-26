@@ -28,9 +28,9 @@
     TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
   };
 
-  services.yabai.enable = true;
-  services.yabai.package = pkgs.yabai;
-  services.skhd.enable = true;
+  # services.yabai.enable = true;
+  # services.yabai.package = pkgs.yabai;
+  # services.skhd.enable = true;
   
   # programs.nix-index.enable = true;
 
