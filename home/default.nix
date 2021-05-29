@@ -21,7 +21,7 @@
   # Htop
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.htop.enable
   programs.htop.enable = true;
-  programs.htop.showProgramPath = true;
+  programs.htop.settings.show_program_path = true;
 
   # Zoxide, a faster way to navigate the filesystem
   # https://github.com/ajeetdsouza/zoxide

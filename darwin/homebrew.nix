@@ -48,6 +48,9 @@
     # Fonts
     "font-fantasque-sans-mono"
     "font-iosevka-nerd-font"
+    "font-iosevka"
+    "font-iosevka-aile"
+    "font-iosevka-curly-slab"
     "font-juliamono"
     "font-liberation-nerd-font"
     "font-jetbrains-mono-nerd-font"

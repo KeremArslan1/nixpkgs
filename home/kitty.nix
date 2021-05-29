@@ -30,7 +30,7 @@ in
 
   programs.kitty.settings = {
     # https://fsd.it/shop/fonts/pragmatapro/
-    font_family = "FiraCode Nerd Font Mono";
+    font_family = "MonoLisa";
     font_size = "16.0";
     adjust_line_height = "120%";
     disable_ligatures = "cursor"; # disable ligatures when cursor is on them
