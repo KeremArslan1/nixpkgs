@@ -65,6 +65,7 @@
     "iterm2"
     "jetbrains-toolbox"
     "karabiner-elements"
+    "kitty"
     "notion"
     "slack"
     "signal"

@@ -2,7 +2,8 @@
 
 {
   # Import config broken out into files
-  imports = [ ./git.nix ./kitty.nix ./fish ];
+  # imports = [ ./git.nix ./kitty.nix ./fish ];
+  imports = [ ./git.nix ./fish ];
 
   # Packages with configuration --------------------------------------------------------------- {{{
 
