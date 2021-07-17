@@ -5,6 +5,12 @@
   # imports = [ ./git.nix ./kitty.nix ./fish ];
   imports = [ ./git.nix ./fish ];
 
+  home.sessionVariables = {
+    PGDATA = "/usr/local/var/postgres";
+    JAVA_HOME = "$(/usr/libexec/java_home -v 11)";
+    EDITOR = "nvim";
+  };
+
   # Packages with configuration --------------------------------------------------------------- {{{
 
   # Bat, a substitute for cat.
@@ -29,12 +35,8 @@
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.zoxide.enable
   programs.zoxide.enable = true;
   # }}}
-
-  home.sessionVariables = {
-    PGDATA = "/usr/local/var/postgres";
-    JAVA_HOME = "$(/usr/libexec/java_home -v 11)";
-    EDITOR = "nvim";
-  };
+  programs.texlive.enable = true;
+  programs.texlive.extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
 
   # Other packages ----------------------------------------------------------------------------- {{{
 
