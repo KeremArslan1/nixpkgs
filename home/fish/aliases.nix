@@ -11,7 +11,7 @@
   mk = "minikube";
   du   = "ncdu --color dark -rr -x";
 
-  v = "nvim";
+  v = "lvim";
   vi = "nvim";
   vim = "nvim";
 

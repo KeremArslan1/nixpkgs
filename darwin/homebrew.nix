@@ -15,11 +15,11 @@
     "AdoptOpenJDK/openjdk"
     "koekeishiya/formulae"
     "coursier/formulas"
-    "railwaycat/emacsmacport"
+    "d12frosted/emacs-plus"
   ];
 
   homebrew.extraConfig = ''
-    brew "emacs-mac", args:["with-starter", "with-imagemagick", "with-rsvg", "with-no-title-bars", "with-emacs-big-sur-icon", "with-mac-metal"]
+    brew "emacs-plus@28", args:["with-xwidgets", "with-native-compe", "with-modern-purple-flat-icon", "with-no-titlebar"]
   '';
 
   homebrew.brews = [
@@ -67,9 +67,11 @@
     "karabiner-elements"
     "kitty"
     "notion"
+    "raycast"
     "slack"
     "signal"
     "spotify"
+    "stats"
     "telegram"
     "vlc"
     "virtualbox"
