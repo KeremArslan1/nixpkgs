@@ -24,10 +24,12 @@
 
   homebrew.brews = [
     "coursier"
+    "goimports"
     "luajit" # brew install --HEAD luajit
     "neovim" # brew install --HEAD neovim
     "ninja"
     "node"
+    "postgres"
     "sbt"
     "svn"
     "skhd"

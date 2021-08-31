@@ -87,6 +87,7 @@
     # :checkers spell
     (aspellWithDicts (ds: with ds; [ en en-computers en-science ]))
     nixfmt
+    stylua
 
     # zathura # A highly customizable and functional PDF viewer
     # mupdf # Lightweight PDF, XPS, and E-book viewer and toolkit written in portable C
@@ -105,6 +106,7 @@
     redis
 
     gitAndTools.gh
+    gitAndTools.delta
   ];
   # }}}
 
