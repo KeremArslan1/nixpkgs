@@ -24,7 +24,7 @@
 
   homebrew.brews = [
     "coursier"
-    "goimports"
+    "golangci-lint"
     "luajit" # brew install --HEAD luajit
     "neovim" # brew install --HEAD neovim
     "ninja"

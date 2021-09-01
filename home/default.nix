@@ -87,6 +87,7 @@
     # :checkers spell
     (aspellWithDicts (ds: with ds; [ en en-computers en-science ]))
     nixfmt
+    
     rnix-lsp
     stylua
 
