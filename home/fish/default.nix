@@ -74,7 +74,7 @@ in {
         set -g fish_pager_color_selected_completion  $background
         set -g fish_pager_color_selected_description $background
 
-        set -g fish_user_paths "/Users/pritamkadam/Library/Application Support/Coursier/bin" $fish_user_paths
+        set -g fish_user_paths "$HOME/Library/Application Support/Coursier/bin" "$HOME/go/bin" $fish_user_paths
       '';
       onVariable = "term_background";
     };

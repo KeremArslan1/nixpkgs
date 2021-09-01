@@ -7,8 +7,11 @@
 
   # Enable experimental version of nix with flakes support
   nix.package = pkgs.nixFlakes;
-  nix.extraOptions = "experimental-features = nix-command flakes";
-
+  nix.extraOptions = ''
+    auto-optimise-store = true
+    experimental-features = nix-command flakes
+  '';
+  
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
